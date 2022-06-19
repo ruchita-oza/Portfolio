@@ -2,7 +2,7 @@ import React from "react";
 import "./about.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendar } from "@fortawesome/free-solid-svg-icons";
-
+import { motion } from "framer-motion";
 function about() {
   const aboutMe = [
     { title: "Birthday", span: "17 oct 2001" },
@@ -110,10 +110,13 @@ function about() {
                         <div className="skill-item padd-15" key={index}>
                           <h5>{skillItem.skill}</h5>
                           <div className="progress">
-                            <div
+                            <motion.div
                               className="progress-in"
-                              style={{ width: skillItem.accuracy }}
-                            ></div>
+                              // initial={{ width: "0%" }}
+                              animate={{ width: skillItem.accuracy }}
+                              transition={{ duration: 2 }}
+                              style={{ width: "0%" }}
+                            ></motion.div>
                             <div className="skill-percent">
                               {skillItem.accuracy}
                             </div>
@@ -132,8 +135,12 @@ function about() {
                         {/* <!-- timeline item --> */}
                         {Educations &&
                           Educations.map((education, index) => (
-                            <div className="timeline-item" key={index}>
-                              <div className="circle-dot"></div>
+                            <motion.div
+                              whileHover={{ scale: 1.02 }}
+                              className="timeline-item"
+                              key={index}
+                            >
+                              <motion.div className="circle-dot"></motion.div>
                               <h3 className="timeline-date">
                                 <FontAwesomeIcon
                                   className="fa"
@@ -147,7 +154,7 @@ function about() {
                               <p className="timeline-text">
                                 {education.description}
                               </p>
-                            </div>
+                            </motion.div>
                           ))}
                       </div>
                     </div>

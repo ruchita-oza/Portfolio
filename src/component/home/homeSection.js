@@ -43,7 +43,7 @@ function homeSection() {
               >
                 Get Resume
               </a>
-            </motion.div>
+              </motion.div>
           </div>
           <div className="home-img padd-15">
             <img src={profile} alt="" />
