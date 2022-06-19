@@ -27,6 +27,9 @@ h3.my-profession {
   font-size: 19px;
   color: var(--text-black-700);
 }
+.home .home-info {
+  flex: 0 0 60%;
+}
 .home .home-img {
   flex: 0 0 40%;
   max-width: 40%;
@@ -65,7 +68,11 @@ h3.my-profession {
 /* .home .home-img img {
   height: 400px;
 } */
-
+@media (min-width: 1124px) {
+  .home .home-img img {
+    flex: 0 0 40%;
+  }
+}
 @media (max-width: 1124px) {
   .home .home-info {
     flex: 0 0 100%;
