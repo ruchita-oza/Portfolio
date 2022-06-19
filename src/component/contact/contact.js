@@ -5,8 +5,10 @@ import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope, faGlobeEurope } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import emailjs from "emailjs-com";
-
+import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 function Contact() {
+  // const navigate = useNavigate();
   const contactInfoItems = [
     { icon: faEnvelope, text: "Contact me on", link: "ruchitaoza9@gmail.com" },
     { icon: faGlobeEurope, text: "Website", link: "www.ruchita-oza.com" },
@@ -30,10 +32,21 @@ function Contact() {
       .send("service_i185qin", "template_9x34bqu", toSend, "EWumzOGPCfEuqBipU")
       .then((response) => {
         console.log("SUCCESS!", response.status, response.text);
+        toast.success("Thanks for Contact! I'll get back to you soon.");
+        // navigate("#home");
       })
       .catch((err) => {
         console.log("FAILED...", err);
+        toast.error(err);
       });
+    setToSend({
+      ...toSend,
+      from_name: "",
+      from_email: "",
+      message: "",
+      subject: "",
+    });
+    // toast.success("It will took some moment");
   };
   const handleChange = (e) => {
     setToSend({ ...toSend, [e.target.name]: e.target.value });

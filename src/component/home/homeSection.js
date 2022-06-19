@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 // images
 
-import profile from "../../image/profile.jpg";
+import profile2 from "../../image/profile2.jpg";
 import "./homeSection.css";
 function homeSection() {
   // const fadeLeft = {
@@ -46,7 +46,7 @@ function homeSection() {
               </motion.div>
           </div>
           <div className="home-img padd-15">
-            <img src={profile} alt="" />
+            <img src={profile2} alt="" />
           </div>
         </div>
       </div>

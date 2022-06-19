@@ -7,10 +7,9 @@ function about() {
   const aboutMe = [
     { title: "Birthday", span: "17 oct 2001" },
     { title: "Age", span: "20" },
-    { title: "Email", span: "ruchitaoza9@gmail.com" },
     { title: "Degree", span: "CS('23)" },
     { title: "City", span: "Amreli , Gujarat" },
-    { title: "FreeLance", span: "Available" },
+    { title: "Email", span: "ruchitaoza9@gmail.com" },
   ];
   const skillItems = [
     { skill: "Problem-solving", accuracy: "76%" },
